@@ -108,4 +108,4 @@ def predict():
 
 # Запуск
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=cfg['global_params']['port'], debug=True)
+    app.run(host='0.0.0.0', port=cfg['global_params']['port'], debug=True, ssl_context=('./config/cert.pem', './config/key.pem'))
