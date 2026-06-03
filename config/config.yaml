@@ -1,0 +1,13 @@
+global_params:
+    with_srm: True
+    port: 5000
+
+model_params:
+    encoder: 'resnet50'
+    aspp_outplane: 512
+    num_class: 2
+
+dataset_params:
+    im_size: 256
+    mean: [0.485, 0.456, 0.406] 
+    std: [0.229, 0.224, 0.225]

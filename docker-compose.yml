@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  neuron-api-service:
+    build: .
+    container_name: neuron-api-container
+    volumes:
+      # Монтируем папку config (хост:контейнер)
+      - ./config:/app/config
+      # Монтируем папку checkpoints
+      - ./checkpoints:/app/checkpoints
+    restart: unless-stopped
+    command: ["python", "app.py"]
+    ports:
+      - "5000:5000"
+    mem_limit: 4g 
